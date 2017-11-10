@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GsF-hq-9kH">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Content-->
+        <scene sceneID="psl-eR-V8s">
+            <objects>
+                <tableViewController storyboardIdentifier="contentTVC" id="GsF-hq-9kH" customClass="ContentTableViewController" customModule="Pppinterest" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DDT-Jx-wOO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="m2K-gY-m2B">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zPP-Jk-Ox0">
+                                    <rect key="frame" x="18" y="19" width="339" height="28"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <segments>
+                                        <segment title="Boards"/>
+                                        <segment title="Pins"/>
+                                    </segments>
+                                    <color key="tintColor" red="0.60784313729999995" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="switchContentType:" destination="GsF-hq-9kH" eventType="valueChanged" id="GNR-zN-hgf"/>
+                                    </connections>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="zPP-Jk-Ox0" secondAttribute="bottom" constant="20" id="0lj-Z6-h6l"/>
+                                <constraint firstItem="zPP-Jk-Ox0" firstAttribute="top" secondItem="m2K-gY-m2B" secondAttribute="top" constant="19" id="TiC-Tc-XsD"/>
+                                <constraint firstAttribute="trailing" secondItem="zPP-Jk-Ox0" secondAttribute="trailing" constant="18" id="bEp-l4-fQT"/>
+                                <constraint firstItem="zPP-Jk-Ox0" firstAttribute="leading" secondItem="m2K-gY-m2B" secondAttribute="leading" constant="18" id="gGu-rK-0WT"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Bec-bS-17D">
+                                <rect key="frame" x="0.0" y="94" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bec-bS-17D" id="71b-p5-TcV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GsF-hq-9kH" id="067-kh-b1l"/>
+                            <outlet property="delegate" destination="GsF-hq-9kH" id="fob-b8-01c"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Content" id="2QD-O2-Iag"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C0Q-4I-EQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="66.400000000000006" y="82.3088455772114"/>
+        </scene>
+        <!--Pins View Controller-->
+        <scene sceneID="cjr-8z-wsF">
+            <objects>
+                <viewController storyboardIdentifier="pinsVC" id="Gjp-1I-MaZ" customClass="PinsViewController" customModule="Pppinterest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rlD-hS-Bd0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K7A-RT-CJR">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Gjp-1I-MaZ" id="gSK-yG-dzr"/>
+                                    <outlet property="delegate" destination="Gjp-1I-MaZ" id="zqf-18-HDn"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="K7A-RT-CJR" firstAttribute="bottom" secondItem="0ej-Ux-ORp" secondAttribute="bottom" id="1zw-P4-IFF"/>
+                            <constraint firstItem="K7A-RT-CJR" firstAttribute="leading" secondItem="0ej-Ux-ORp" secondAttribute="leading" id="BSP-ft-0ss"/>
+                            <constraint firstItem="K7A-RT-CJR" firstAttribute="trailing" secondItem="0ej-Ux-ORp" secondAttribute="trailing" id="miD-bF-2fL"/>
+                            <constraint firstItem="K7A-RT-CJR" firstAttribute="top" secondItem="0ej-Ux-ORp" secondAttribute="top" id="vTY-JW-WGk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0ej-Ux-ORp"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="pinsTableView" destination="K7A-RT-CJR" id="IZf-Xa-XvT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gXX-fg-tnF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1132" y="82.3088455772114"/>
+        </scene>
+    </scenes>
+</document>
